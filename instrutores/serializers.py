@@ -6,12 +6,12 @@ from .models import Instrutor
 from rest_framework import serializers
 
 class InstrutorSerializer(serializers.ModelSerializer):
-    
+    # validar o telefone
     telefone = serializers.RegexField(
         regex=r'^\(\d{2}\) \d{4,5}-\d{4}$',
         error_messages={'invalid': 'Formato de telefone inválido. Use o formato (XX) XXXX-XXXX.'}
     )
-    
+  
     def validate_cref(self, value):
         
         if len(value) != 9 or value[6] != '/':

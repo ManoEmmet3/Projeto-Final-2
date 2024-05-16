@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'instrutores',
     'rest_framework',
     'alunos',
+    'atividades',
 ]
 
 MIDDLEWARE = [
@@ -77,12 +78,15 @@ WSGI_APPLICATION = 'academia.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  '',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "fitdb",
+        "USER": "user_fit",
+        "PASSWORD": "senha123",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
